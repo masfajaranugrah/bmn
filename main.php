@@ -1,3 +1,13 @@
+<?php
+session_start();      // memulai session
+
+// redirect ke halaman home jika parameter page kosong (misal akses "/")
+if (empty($_GET['page'])) {
+    header('Location: /home', true, 301);
+    exit();
+}
+?>
+
 <!-- Web Company Profile "General Solutions"
 **********************************************
 * Developer    : Indra Styawantoro
@@ -7,10 +17,6 @@
 * E-mail       : indra.setyawantoro@gmail.com
 * Phone        : +62-856-6991-9769
 -->
-
-<?php
-session_start();      // memulai session
-?>
 
 <!DOCTYPE html>
 <html lang="en">
