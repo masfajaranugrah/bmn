@@ -2,6 +2,9 @@
 RewriteEngine on
 RewriteBase /
 
+# Redirect halaman utama (/) ke /home
+RewriteRule ^$ /home [R=301,L]
+
 # Jangan proses jika sudah ke file/folder nyata (termasuk main.php, index.php, assets, dll)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
