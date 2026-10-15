@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteBase /
+
+# Jangan proses jika sudah ke file/folder nyata (termasuk main.php, index.php, assets, dll)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^home$ main.php?page=home [L,QSA]
+RewriteRule ^about$ main.php?page=about [L,QSA]
+RewriteRule ^service$ main.php?page=service [L,QSA]
+RewriteRule ^portfolio$ main.php?page=portfolio [L,QSA]
+RewriteRule ^page-(.*)$ main.php?page=portfolio&hal=$1 [L,QSA]
+RewriteRule ^contact$ main.php?page=contact [L,QSA]
+RewriteRule ^contact-success$ main.php?page=contact&alert=1 [L,QSA]
+
+Options All -Indexes
+</IfModule>
